@@ -26,6 +26,7 @@ UPDATE Comics SET id_autor = 311 where id_comic = 11;
 select *from Comics;
 
 UPDATE Comic_Compras SET id_autor = 302 where id_CC =2;
+UPDATE Comic_Compras SET id_autor = 303 where id_CC =3;
 
 ALTER TABLE Comic_Compras
 ADD id_autor bigint,
