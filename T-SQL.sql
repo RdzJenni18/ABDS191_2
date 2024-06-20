@@ -44,7 +44,7 @@ BEGIN
 END
 */
  --Return & BREAK
- declare @contador int = 0
+/* declare @contador int = 0
 
 WHILE @contador <= 10
 
@@ -65,4 +65,22 @@ END CATCH
 
 print('soy otra consulta')
 print('yo tambien')
+*/
+
+--CASE
+DECLARE @valor int
+DECLARE @resultado char(10)=''
+set @valor = 20
+
+set @resultado = (CASE WHEN @valor = 10 THEN 'ROJO'
+					   WHEN @valor = 20 THEN 'MORADO'
+					   WHEN @valor = 30 THEN 'ROSA' 
+					   ELSE 'GRIS'
+					   END)
+PRINT @resultado
+
+select * ,(CASE WHEN disponibilidad = 1 THEN 'VERDE'
+				WHEN disponibilidad = 0 THEN 'ROJO'
+				ELSE 'NEGRO' END) AS INDICADOR
+				FROM Inventario
 
