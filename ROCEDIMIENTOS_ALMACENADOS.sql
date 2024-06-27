@@ -64,12 +64,16 @@ CREATE PROCEDURE sp_ConsultaPeliculas
 @generoPelicula NVARCHAR(50)
 AS
 BEGIN
-Select 
-From Usuarios u,
-JOIN HistorialVisualizacion hv ON 
-JOIN Peliculas p
-WHERE = @generoPelicula
+Select u.UsuarioID, p.Titulo,p.Genero
+From HistorialVisualizacion as hv
+JOIN Peliculas p ON p.PeliculaID = hv.PeliculaID
+JOIN Usuarios u ON u.UsuarioID = hv.UsuarioID
+WHERE p.Genero = @generoPelicula
 END;
+
+EXEC sp_ConsultaPeliculas @generoPelicula = 'Animación'
+
+select * from HistorialVisualizacion
 
 
 
