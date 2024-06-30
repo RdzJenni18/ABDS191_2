@@ -92,7 +92,7 @@ EXEC sp_EliminarAutores @id_autor = 306
 select*from Autores
 
 --3
-CREATE PROCEDURE sp_ConsultarInventarioPorDisponibilidad
+CREATE PROCEDURE sp_ConsultarInventario
 @disponibilidad BINARY
 AS
 BEGIN
@@ -101,9 +101,9 @@ FROM Inventario I
 INNER JOIN Comics CO ON I.id_comic = CO.id_comic
 WHERE I.disponibilidad = @disponibilidad;
 END;
-EXEC sp_ConsultarInventarioPorDisponibilidad @disponibilidad = 1;
+EXEC sp_ConsultarInventario @disponibilidad = 1;
 
-CREATE PROCEDURE sp_ConsultarComprasPorCliente
+CREATE PROCEDURE sp_ConsultarCompras
 @id_cliente BIGINT
 AS
 BEGIN
@@ -114,7 +114,7 @@ INNER JOIN Comics CO ON CC.id_comic = CO.id_comic
 WHERE C.id_cliente = @id_cliente;
 END;
 
-EXEC sp_ConsultarComprasPorCliente @id_cliente = 1;
+EXEC sp_ConsultarCompras @id_cliente = 1;
 
 CREATE PROCEDURE sp_ConsultarComics
 @id_compra BIGINT
