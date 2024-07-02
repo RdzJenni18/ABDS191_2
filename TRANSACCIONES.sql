@@ -23,4 +23,7 @@ END;
 
 EXEC sp_agregarSuscripcion @usuario_id =1, @fecha_inicio ='2024-07-01',@fecha_fin = '2024-08-01', @tipo = 'Premium'
 
+EXEC sp_agregarSuscripcion @usuario_id =12, @fecha_inicio ='2024-07-01',@fecha_fin = '2024-08-01', @tipo = 'Premium'
+
+EXEC sp_agregarSuscripcion @usuario_id =18, @fecha_inicio ='2024-07-01',@fecha_fin = '2024-08-01', @tipo = 'Premium'
 SELECT*FROM Suscripciones
